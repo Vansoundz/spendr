@@ -17,7 +17,7 @@ sequelize
     console.log("Models synchronized");
   })
   .catch((error) => {
-    console.error("Error synchronizing models:", error);
+    console.error("Error synchronizing models:", error.message);
   });
 
 export { Category, Budget, Spending, sequelize };

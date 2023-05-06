@@ -11,7 +11,14 @@ const sequelize = new Sequelize({
   password,
   dialect: "postgres",
   host,
-  ssl: true,
+  port: 5432,
+  // ssl: true,
+  protocol: "tcp",
+  dialectOptions: {
+    ssl: {
+      rejectUnauthorized: false,
+    },
+  },
 });
 
 export default sequelize;
