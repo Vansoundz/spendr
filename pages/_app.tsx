@@ -47,11 +47,11 @@ const UserDataLoader: FC<PropsWithChildren> = ({ children }) => {
   });
 
   useEffect(() => {
-    if (data) {
+    if (user) {
       router.push("app");
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [data]);
+  }, [user]);
 
   if (isLoading || loading) return <Loading />;
 
