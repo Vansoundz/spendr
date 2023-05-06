@@ -55,11 +55,11 @@ const UserDataLoader: FC<PropsWithChildren> = ({ children }) => {
 
   if (isLoading || loading) return <Loading />;
 
-  if (error || err) {
+  if (error) {
     return <>{error?.message || err?.message}</>;
   }
 
-  return <>{data ? children : <Link href="/api/auth/login">Login</Link>}</>;
+  return <>{user ? children : <Link href="/api/auth/login">Login</Link>}</>;
 };
 
 export default function App({ Component, pageProps }: AppProps) {
