@@ -1,15 +1,8 @@
 import Head from "next/head";
-import { Inter } from "next/font/google";
 import { FC, PropsWithChildren } from "react";
-import Link from "next/link";
-import { useUser } from "@auth0/nextjs-auth0/client";
-import Image from "next/image";
-
-const inter = Inter({ subsets: ["latin"] });
+import Header from "@/lib/ui/components/shared/Header";
 
 const Layout: FC<PropsWithChildren> = ({ children }) => {
-  const { user, error, isLoading } = useUser();
-
   return (
     <>
       <Head>
@@ -22,7 +15,8 @@ const Layout: FC<PropsWithChildren> = ({ children }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <p>
+        <Header />
+        {/* <p>
           Layout <Link href="/api/auth/logout">Logout</Link>
         </p>
         <p>{user?.nickname}</p>
@@ -33,8 +27,8 @@ const Layout: FC<PropsWithChildren> = ({ children }) => {
             width={100}
             height={100}
           />
-        </p>
-        {children}
+        </p> */}
+        <section id="app-container">{children}</section>
       </main>
     </>
   );
